@@ -1,26 +1,27 @@
-var todos = ['item 1', 'item 2', 'item 3'] //creating variables
+var todoList = {
+  
+  todos: ['item 1','item 2','item 3'],
+  //it should have a method to display todos
+  displayTodos: function() {
+    console.log('My todo: ', this.todos);
+  },
 
-//it should have a function to display todos
-function displayTodos() { 
-	console.log(todos);
-}
-
-
-//it should have a function to add a new todo
-function addTodo(todo){
-	todos.push(todo);
-	displayTodos();
-}
-
-//it should have a function to change todo
-function changeTodo (position, newValue) {
-	todos[position] = newValue;
-	displayTodos();
-}
-
-//it should have a function to delete todo
-function deleteTodo (startPosition){
-	todos.splice(startPosition,1);
-	displayTodos();
-}
-
+  //it should have a method to add a new todo
+  addTodo: function(todo){
+    this.todos.push(todo);
+    this.displayTodos();
+  },
+  
+  //it should have a function to change todo
+  changeTodo: function(position,newValue){
+    this.todos[position]=newValue;
+    this.displayTodos();
+  },
+  
+  //it should have a function to delete todo
+  deleteTodo: function(position){
+    this.todos.splice(position,1);
+    this.displayTodos();
+  }
+  
+};
