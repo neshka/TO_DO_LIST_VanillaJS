@@ -16,8 +16,9 @@ var todoList = {
   },
   
   //it should have a function to change todo
-  changeTodo: function(position,newValue){
-    this.todos[position]=newValue;
+  changeTodo: function(position,newTodoText){
+    //this.todos[position]=newTodoText;//change for only changing TodoText from object
+    this.todos[position].todoText = newTodoText;
     this.displayTodos();
   },
   
