@@ -1,14 +1,17 @@
 var todoList = {
   
-  todos: ['item 1','item 2','item 3'],
+  todos: [],
   //it should have a method to display todos
   displayTodos: function() {
     console.log('My todo: ', this.todos);
   },
 
   //it should have a method to add a new todo
-  addTodo: function(todo){
-    this.todos.push(todo);
+  addTodo: function(todoText){
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
     this.displayTodos();
   },
   
