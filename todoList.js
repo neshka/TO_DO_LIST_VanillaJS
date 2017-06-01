@@ -16,9 +16,15 @@ var todoList = {
   },
   
   //it should have a function to change todo
-  changeTodo: function(position,newTodoText){
-    //this.todos[position]=newTodoText;//change for only changing TodoText from object
-    this.todos[position].todoText = newTodoText;
+  changeTodo: function(position,todoText){
+    this.todos[position].todoText = todoText;
+    this.displayTodos();
+  },
+
+  //it should change completed property
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
     this.displayTodos();
   },
   
