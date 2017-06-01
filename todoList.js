@@ -2,8 +2,19 @@ var todoList = {
   
   todos: [],
   //it should have a method to display todos
-  displayTodos: function() {
-    console.log('My todo: ', this.todos);
+  displayTodos: function() {       
+    if (this.todos.length===0) {
+      console.log(' My todos list is empty.')
+    }else{
+      console.log('My todos:');
+      for (var i = 0; i < this.todos.length; i++) {
+        if (this.todos.completed === true) {
+          console.log('(x)', this.todos[i].todoText);
+        } else {
+          console.log('( )', this.todos[i].todoText);
+        }        
+      }
+    }
   },
 
   //it should have a method to add a new todo
