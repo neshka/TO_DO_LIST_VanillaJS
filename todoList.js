@@ -8,11 +8,11 @@ var todoList = {
     }else{
       console.log('My todos:');
       for (var i = 0; i < this.todos.length; i++) {
-        if (this.todos.completed === true) {
-          console.log('(x)', this.todos[i].todoText);
-        } else {
+        if (this.todos[i].completed === false) {
           console.log('( )', this.todos[i].todoText);
-        }        
+        } else {
+          console.log('(x)', this.todos[i].todoText);
+        }
       }
     }
   },
@@ -43,6 +43,28 @@ var todoList = {
   deleteTodo: function(position){
     this.todos.splice(position,1);
     this.displayTodos();
+  },
+
+  toggleAll: function() {
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+
+    //get number of completed todos
+    for (var i = 0; i < totalTodos; i++) {
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+
+    //if everything is completed: true make everything completed: false
+    if (completedTodos === totalTodos) {
+      for (var i = 0; i < totalTodos; i++) {
+        this.todos[i].completed === false;
+      }      
+    }
+
+    this.displayTodos();
+
   }
   
 };
