@@ -72,15 +72,26 @@ var todoList = {
   
 };
 
-//grab the button 
-var displayTodosButton = document.getElementById('displayTodosButton');
-var toggleAllButton = document.getElementById('toggleAllButton');
+var handlers = {
+  displayTodos: function () {
+    todoList.displayTodos();
+  },
+  toggleAll: function () {
+    todoList.toggleAll();
+  }
+};
 
-//add the event to the button
-displayTodosButton.addEventListener('click', function () {
-  todoList.displayTodos();
-});
 
-toggleAllButton.addEventListener('click', function () {
-  todoList.toggleAll();
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
