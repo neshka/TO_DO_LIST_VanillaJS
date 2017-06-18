@@ -56,15 +56,21 @@ var todoList = {
       }
     }
 
-    //if everything is completed: true make everything completed: false
+    //if everything is true make everything false
     if (completedTodos === totalTodos) {
       for (var i = 0; i < totalTodos; i++) {
-        this.todos[i].completed === false;
+        this.todos[i].completed = false;
       }      
+    }else{
+      for (var i = 0; i < totalTodos; i++) {
+        this.todos[i].completed = true;
+      }
     }
 
     this.displayTodos();
-
   }
   
 };
+
+//get access to the display todos button
+//run displayTodos method, when someone clicks the display todos button
