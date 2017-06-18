@@ -76,5 +76,7 @@ var todoList = {
 var displayTodosButton = document.getElementById('displayTodosButton');
 console.log(displayTodosButton);
 
-
 //run displayTodos method, when someone clicks the display todos button
+displayTodosButton.addEventListener('click', function () {
+  todoList.displayTodos();
+});
