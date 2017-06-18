@@ -72,11 +72,10 @@ var todoList = {
   
 };
 
-//get access to the display todos button
+//grab the button 
 var displayTodosButton = document.getElementById('displayTodosButton');
-console.log(displayTodosButton);
 
-//run displayTodos method, when someone clicks the display todos button
+//add the event to the button
 displayTodosButton.addEventListener('click', function () {
   todoList.displayTodos();
 });
