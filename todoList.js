@@ -78,6 +78,11 @@ var handlers = {
   },
   toggleAll: function () {
     todoList.toggleAll();
+  },
+  addTodo: function () {
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = "";//after we add value the input will stay empty
   }
 };
 
