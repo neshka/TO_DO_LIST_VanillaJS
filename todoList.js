@@ -91,6 +91,10 @@ var handlers = {
     //clear values
     changeTodoPositionInput.value = "";
     changeTodoTextInput.value = "";    
+  },
+  deleteTodo: function(){
+    var deleteTodo = document.getElementById('deleteTodo');
+    todoList.deleteTodo(deleteTodo.valueAsNumber);
   }
 };
 
