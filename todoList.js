@@ -99,6 +99,8 @@ var view = {
         todoTextWithCompletion = '( ) ' + todo.todoText;
       }
 
+
+      todoLi.id = i;
       todoLi.textContent = todoTextWithCompletion;
       todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
@@ -111,3 +113,8 @@ var view = {
     return deleteButton;
   }
 };
+
+var todosUl = document.querySelector('ul');
+todosUl.addEventListener('click', function() {
+  console.log(event.target.parentNode.id);
+});
