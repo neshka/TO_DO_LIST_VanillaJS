@@ -116,5 +116,12 @@ var view = {
 
 var todosUl = document.querySelector('ul');
 todosUl.addEventListener('click', function() {
-  console.log(event.target.parentNode.id);
+  //get the element that was clicked on
+  var elementClicked = event.target;
+
+  //check if element clicked is a delete button
+  if (elementClicked.className === 'deleteButton') {
+    //run handlers delete.todo
+    
+  }
 });
