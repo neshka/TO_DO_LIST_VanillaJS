@@ -72,10 +72,8 @@ var handlers = {
     toggleCompleted.value = "";
     view.displayTodos();
   },
-  deleteTodo: function(){
-    var deleteTodo = document.getElementById('deleteTodo');
-    todoList.deleteTodo(deleteTodo.valueAsNumber);
-    deleteTodo.value = "";
+  deleteTodo: function(position){
+    todoList.deleteTodo(position);
     view.displayTodos();
   },
   toggleAll: function () {
@@ -115,13 +113,13 @@ var view = {
 };
 
 var todosUl = document.querySelector('ul');
-todosUl.addEventListener('click', function() {
+
+todosUl.addEventListener('click', function(event) {
   //get the element that was clicked on
   var elementClicked = event.target;
 
   //check if element clicked is a delete button
   if (elementClicked.className === 'deleteButton') {
-    //run handlers delete.todo
-    
+    handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
   }
 });
